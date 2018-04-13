@@ -7,6 +7,7 @@ addons:
     postgresql: "10"
     apt:
       packages:
+        - postgresql-10
         - postgresql-10-postgis-2.4
         - libgeos-dev
         - libprotobuf-dev
@@ -14,12 +15,13 @@ addons:
         - osmosis
 
 before_script:
-  - sudo /etc/init.d/postgresql stop
   - sudo sed -i -e 's/peer/trust/g' /etc/postgresql/10/main/pg_hba.conf
   - sudo sed -i -e 's/md5/trust/g' /etc/postgresql/10/main/pg_hba.conf
+  - sudo cat /etc/postgresql/10/main/pg_hba.conf
+  - sudo /etc/init.d/postgresql stop
   - sudo /etc/init.d/postgresql start 10
-  - sleep 5
   - sudo service postgresql status
+  - sudo ls -la /usr/share/postgresql/10/extension/
   - psql -U postgres -c 'create database travis' || true
   - psql -U postgres -c "create extension if not exists postgis"
   - psql -U postgres -c "create extension if not exists hstore"
