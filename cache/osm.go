@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 
 	"github.com/jmhodges/levigo"
-	"github.com/omniscale/imposm3/element"
+	"github.com/unibasil/imposm3/element"
 )
 
 var (

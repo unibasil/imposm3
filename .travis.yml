@@ -6,10 +6,10 @@ go:
  - tip
 
 addons:
-    postgresql: "9.5"
+    postgresql: "10"
     apt:
       packages:
-        - postgresql-9.5-postgis-2.3
+        - postgresql-10-postgis-2.4
         - libgeos-dev
         - libprotobuf-dev
         - protobuf-compiler
@@ -25,7 +25,7 @@ env:
     - PGUSER=postgres
 
 install:
-  - LEVELDB_VER=1.18
+  - LEVELDB_VER=1.20
   - curl -fsSL https://github.com/google/leveldb/archive/v${LEVELDB_VER}.tar.gz | tar -C ${HOME} -xzf -
   - make -C ${HOME}/leveldb-${LEVELDB_VER} -j2
   - sudo mv ${HOME}/leveldb-${LEVELDB_VER}/libleveldb* /usr/lib

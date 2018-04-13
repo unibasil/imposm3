@@ -6,13 +6,13 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/omniscale/imposm3"
-	"github.com/omniscale/imposm3/cache/query"
-	"github.com/omniscale/imposm3/config"
-	"github.com/omniscale/imposm3/import_"
-	"github.com/omniscale/imposm3/logging"
-	"github.com/omniscale/imposm3/stats"
-	"github.com/omniscale/imposm3/update"
+	"github.com/unibasil/imposm3"
+	"github.com/unibasil/imposm3/cache/query"
+	"github.com/unibasil/imposm3/config"
+	"github.com/unibasil/imposm3/import_"
+	"github.com/unibasil/imposm3/logging"
+	"github.com/unibasil/imposm3/stats"
+	"github.com/unibasil/imposm3/update"
 )
 
 var log = logging.NewLogger("")

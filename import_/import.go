@@ -6,17 +6,17 @@ package import_
 import (
 	"os"
 
-	"github.com/omniscale/imposm3/cache"
-	"github.com/omniscale/imposm3/config"
-	"github.com/omniscale/imposm3/database"
-	_ "github.com/omniscale/imposm3/database/postgis"
-	"github.com/omniscale/imposm3/geom/limit"
-	"github.com/omniscale/imposm3/logging"
-	"github.com/omniscale/imposm3/mapping"
-	"github.com/omniscale/imposm3/reader"
-	"github.com/omniscale/imposm3/stats"
-	"github.com/omniscale/imposm3/update/state"
-	"github.com/omniscale/imposm3/writer"
+	"github.com/unibasil/imposm3/cache"
+	"github.com/unibasil/imposm3/config"
+	"github.com/unibasil/imposm3/database"
+	_ "github.com/unibasil/imposm3/database/postgis"
+	"github.com/unibasil/imposm3/geom/limit"
+	"github.com/unibasil/imposm3/logging"
+	"github.com/unibasil/imposm3/mapping"
+	"github.com/unibasil/imposm3/reader"
+	"github.com/unibasil/imposm3/stats"
+	"github.com/unibasil/imposm3/update/state"
+	"github.com/unibasil/imposm3/writer"
 )
 
 var log = logging.NewLogger("")
