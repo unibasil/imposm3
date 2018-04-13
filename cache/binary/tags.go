@@ -17,7 +17,7 @@ package binary
 import (
 	"unicode/utf8"
 
-	"github.com/unibasil/imposm3/element"
+	"github.com/omniscale/imposm3/element"
 )
 
 type codepoint rune

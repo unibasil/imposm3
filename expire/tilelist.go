@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/unibasil/imposm3/element"
-	"github.com/unibasil/imposm3/proj"
+	"github.com/omniscale/imposm3/element"
+	"github.com/omniscale/imposm3/proj"
 )
 
 var mercBbox = [4]float64{

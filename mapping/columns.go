@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/unibasil/imposm3/element"
-	"github.com/unibasil/imposm3/geom"
-	"github.com/unibasil/imposm3/logging"
-	"github.com/unibasil/imposm3/mapping/config"
+	"github.com/omniscale/imposm3/element"
+	"github.com/omniscale/imposm3/geom"
+	"github.com/omniscale/imposm3/logging"
+	"github.com/omniscale/imposm3/mapping/config"
 	"github.com/pkg/errors"
 )
 

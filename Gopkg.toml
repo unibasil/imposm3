@@ -23,7 +23,7 @@
 
 [[constraint]]
   name = "github.com/gogo/protobuf"
-  version = "0.5.0"
+  version = "1.0.0"
 
 [[constraint]]
   branch = "master"
@@ -39,8 +39,8 @@
 
 [[constraint]]
   name = "gopkg.in/fsnotify.v1"
-  version = "1.4.2"
+  version = "1.4.7"
 
 [[constraint]]
-  branch = "v2"
   name = "gopkg.in/yaml.v2"
+  version = "2.2.1"

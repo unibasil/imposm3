@@ -6,15 +6,15 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/unibasil/imposm3/cache"
+	"github.com/omniscale/imposm3/cache"
 
-	"github.com/unibasil/imposm3/element"
-	"github.com/unibasil/imposm3/geom"
-	"github.com/unibasil/imposm3/proj"
+	"github.com/omniscale/imposm3/element"
+	"github.com/omniscale/imposm3/geom"
+	"github.com/omniscale/imposm3/proj"
 
 	"testing"
 
-	"github.com/unibasil/imposm3/geom/geos"
+	"github.com/omniscale/imposm3/geom/geos"
 )
 
 var ts importTestSuite
@@ -71,10 +71,10 @@ func TestComplete_OnlyNewStyleMultipolgon(t *testing.T) {
 
 func TestComplete_LandusageToWaterarea1(t *testing.T) {
 	// Parks inserted into landusages
-	cache := ts.cache(t)
-	defer cache.Close()
-	assertCachedWay(t, cache, 11001)
-	assertCachedWay(t, cache, 13001)
+	localCache := ts.cache(t)
+	defer localCache.Close()
+	assertCachedWay(t, localCache, 11001)
+	assertCachedWay(t, localCache, 13001)
 
 	assertRecords(t, []checkElem{
 		{"osm_waterareas", 11001, Missing, nil},
@@ -99,10 +99,10 @@ func TestComplete_LandusageToWaterarea1(t *testing.T) {
 
 func TestComplete_ChangedHoleTags1(t *testing.T) {
 	// Multipolygon relation with untagged hole
-	cache := ts.cache(t)
-	defer cache.Close()
-	assertCachedWay(t, cache, 14001)
-	assertCachedWay(t, cache, 14011)
+	localCache := ts.cache(t)
+	defer localCache.Close()
+	assertCachedWay(t, localCache, 14001)
+	assertCachedWay(t, localCache, 14011)
 
 	assertRecords(t, []checkElem{
 		{"osm_waterareas", 14011, Missing, nil},
@@ -178,12 +178,12 @@ func TestComplete_OuterWayInserted(t *testing.T) {
 func TestComplete_NodeWayRefAfterDelete1(t *testing.T) {
 	// Nodes references way
 
-	cache := ts.diffCache(t)
-	defer cache.Close()
-	if ids := cache.Coords.Get(20001); len(ids) != 1 || ids[0] != 20001 {
+	localCache := ts.diffCache(t)
+	defer localCache.Close()
+	if ids := localCache.Coords.Get(20001); len(ids) != 1 || ids[0] != 20001 {
 		t.Error("node does not references way")
 	}
-	if ids := cache.Coords.Get(20002); len(ids) != 1 || ids[0] != 20001 {
+	if ids := localCache.Coords.Get(20002); len(ids) != 1 || ids[0] != 20001 {
 		t.Error("node does not references way")
 	}
 
@@ -196,9 +196,9 @@ func TestComplete_NodeWayRefAfterDelete1(t *testing.T) {
 func TestComplete_WayRelRefAfterDelete1(t *testing.T) {
 	// Ways references relation
 
-	cache := ts.diffCache(t)
-	defer cache.Close()
-	if ids := cache.Ways.Get(21001); len(ids) != 1 || ids[0] != 21001 {
+	localCache := ts.diffCache(t)
+	defer localCache.Close()
+	if ids := localCache.Ways.Get(21001); len(ids) != 1 || ids[0] != 21001 {
 		t.Error("way does not references relation")
 	}
 
@@ -336,7 +336,7 @@ func TestComplete_RingWithGap(t *testing.T) {
 	assertGeomValid(t, checkElem{"osm_landusages", -7301, Missing, nil})
 	// but not way
 	assertRecords(t, []checkElem{
-		checkElem{"osm_landusages", 7311, Missing, nil},
+		{"osm_landusages", 7311, Missing, nil},
 	})
 }
 
@@ -451,11 +451,11 @@ func TestComplete_UpdatedLandusage(t *testing.T) {
 func TestComplete_PartialDelete(t *testing.T) {
 	// Deleted relation but nodes are still cached
 
-	cache := ts.cache(t)
-	defer cache.Close()
-	assertCachedNode(t, cache, 2001)
-	assertCachedWay(t, cache, 2001)
-	assertCachedWay(t, cache, 2002)
+	localCache := ts.cache(t)
+	defer localCache.Close()
+	assertCachedNode(t, localCache, 2001)
+	assertCachedWay(t, localCache, 2001)
+	assertCachedWay(t, localCache, 2002)
 
 	assertRecords(t, []checkElem{
 		{"osm_landusages", -2001, Missing, nil},
@@ -505,10 +505,10 @@ func TestComplete_LandusageToWaterarea2(t *testing.T) {
 func TestComplete_ChangedHoleTags2(t *testing.T) {
 	// Newly tagged hole is inserted
 
-	cache := ts.cache(t)
-	defer cache.Close()
-	assertCachedWay(t, cache, 14001)
-	assertCachedWay(t, cache, 14011)
+	localCache := ts.cache(t)
+	defer localCache.Close()
+	assertCachedWay(t, localCache, 14001)
+	assertCachedWay(t, localCache, 14011)
 
 	assertGeomArea(t, checkElem{"osm_waterareas", 14011, "water", nil}, 26672019779)
 	assertGeomArea(t, checkElem{"osm_landusages", -14001, "park", nil}, 10373697182)
@@ -550,9 +550,9 @@ func TestComplete_MergeOuterMultipolygonWay2(t *testing.T) {
 		t.Error("way references relation")
 	}
 
-	cache := ts.cache(t)
-	defer cache.Close()
-	rel, err := cache.Relations.GetRelation(16001)
+	localCache := ts.cache(t)
+	defer localCache.Close()
+	rel, err := localCache.Relations.GetRelation(16001)
 	if err != nil {
 		t.Fatal(err)
 	}

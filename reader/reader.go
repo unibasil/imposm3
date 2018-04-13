@@ -8,14 +8,14 @@ import (
 	"strings"
 	"sync"
 
-	osmcache "github.com/unibasil/imposm3/cache"
-	"github.com/unibasil/imposm3/element"
-	"github.com/unibasil/imposm3/geom/geos"
-	"github.com/unibasil/imposm3/geom/limit"
-	"github.com/unibasil/imposm3/logging"
-	"github.com/unibasil/imposm3/mapping"
-	"github.com/unibasil/imposm3/parser/pbf"
-	"github.com/unibasil/imposm3/stats"
+	osmcache "github.com/omniscale/imposm3/cache"
+	"github.com/omniscale/imposm3/element"
+	"github.com/omniscale/imposm3/geom/geos"
+	"github.com/omniscale/imposm3/geom/limit"
+	"github.com/omniscale/imposm3/logging"
+	"github.com/omniscale/imposm3/mapping"
+	"github.com/omniscale/imposm3/parser/pbf"
+	"github.com/omniscale/imposm3/stats"
 )
 
 var log = logging.NewLogger("reader")

@@ -7,10 +7,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/unibasil/imposm3/geom/geojson"
-	"github.com/unibasil/imposm3/geom/geos"
-	"github.com/unibasil/imposm3/logging"
-	"github.com/unibasil/imposm3/proj"
+	"github.com/omniscale/imposm3/geom/geojson"
+	"github.com/omniscale/imposm3/geom/geos"
+	"github.com/omniscale/imposm3/logging"
+	"github.com/omniscale/imposm3/proj"
 )
 
 var log = logging.NewLogger("limiter")

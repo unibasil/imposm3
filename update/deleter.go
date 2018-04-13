@@ -1,12 +1,12 @@
 package update
 
 import (
-	"github.com/unibasil/imposm3/cache"
-	"github.com/unibasil/imposm3/database"
-	"github.com/unibasil/imposm3/element"
-	"github.com/unibasil/imposm3/expire"
-	"github.com/unibasil/imposm3/mapping"
-	"github.com/unibasil/imposm3/parser/diff"
+	"github.com/omniscale/imposm3/cache"
+	"github.com/omniscale/imposm3/database"
+	"github.com/omniscale/imposm3/element"
+	"github.com/omniscale/imposm3/expire"
+	"github.com/omniscale/imposm3/mapping"
+	"github.com/omniscale/imposm3/parser/diff"
 )
 
 type Deleter struct {

@@ -7,13 +7,13 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/unibasil/imposm3/cache"
-	"github.com/unibasil/imposm3/config"
-	"github.com/unibasil/imposm3/expire"
-	"github.com/unibasil/imposm3/geom/limit"
-	"github.com/unibasil/imposm3/logging"
-	"github.com/unibasil/imposm3/replication"
-	"github.com/unibasil/imposm3/update/state"
+	"github.com/omniscale/imposm3/cache"
+	"github.com/omniscale/imposm3/config"
+	"github.com/omniscale/imposm3/expire"
+	"github.com/omniscale/imposm3/geom/limit"
+	"github.com/omniscale/imposm3/logging"
+	"github.com/omniscale/imposm3/replication"
+	"github.com/omniscale/imposm3/update/state"
 )
 
 var logger = logging.NewLogger("")

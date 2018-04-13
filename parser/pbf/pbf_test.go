@@ -9,8 +9,8 @@ import (
 	"testing"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/unibasil/imposm3/element"
-	"github.com/unibasil/imposm3/parser/pbf/internal/osmpbf"
+	"github.com/omniscale/imposm3/element"
+	"github.com/omniscale/imposm3/parser/pbf/internal/osmpbf"
 )
 
 func BenchmarkHello(b *testing.B) {

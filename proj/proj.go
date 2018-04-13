@@ -1,7 +1,7 @@
 package proj
 
 import (
-	"github.com/unibasil/imposm3/element"
+	"github.com/omniscale/imposm3/element"
 	"math"
 )
 

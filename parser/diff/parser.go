@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/unibasil/imposm3/element"
-	"github.com/unibasil/imposm3/logging"
+	"github.com/omniscale/imposm3/element"
+	"github.com/omniscale/imposm3/logging"
 )
 
 var log = logging.NewLogger("osc parser")
