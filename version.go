@@ -1,5 +1,6 @@
 package imposm3
 
+// Version
 var Version string
 
 // buidVersion gets replaced while building with
@@ -7,6 +8,6 @@ var Version string
 var buildVersion string
 
 func init() {
-	Version = "0.5.0"
+	Version = "0.5.1"
 	Version += buildVersion
 }
