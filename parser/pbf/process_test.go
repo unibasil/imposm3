@@ -4,7 +4,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/omniscale/imposm3/element"
+	"github.com/unibasil/imposm3/element"
 )
 
 func TestParser(t *testing.T) {

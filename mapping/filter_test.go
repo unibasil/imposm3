@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/omniscale/imposm3/element"
-	"github.com/omniscale/imposm3/mapping/config"
+	"github.com/unibasil/imposm3/element"
+	"github.com/unibasil/imposm3/mapping/config"
 )
 
 var mapping *Mapping
