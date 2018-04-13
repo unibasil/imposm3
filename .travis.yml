@@ -14,6 +14,7 @@ addons:
         - osmosis
 
 before_script:
+  - sudo /etc/init.d/postgresql stop
   - psql -U postgres -c 'create database travis' || true
   - psql -U postgres -c "create extension if not exists postgis"
   - psql -U postgres -c "create extension if not exists hstore"
