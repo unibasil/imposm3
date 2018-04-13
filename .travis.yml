@@ -17,10 +17,9 @@ addons:
 before_script:
   - sudo sed -i -e 's/peer/trust/g' /etc/postgresql/10/main/pg_hba.conf
   - sudo sed -i -e 's/md5/trust/g' /etc/postgresql/10/main/pg_hba.conf
-  - sudo cat /etc/postgresql/10/main/pg_hba.conf
   - sudo /etc/init.d/postgresql stop
   - sudo /etc/init.d/postgresql start 10
-  - sudo service postgresql status
+  - sudo find / | grep "postgis.control"
   - sudo ls -la /usr/share/postgresql/10/extension/
   - psql -U postgres -c 'create database travis' || true
   - psql -U postgres -c "create extension if not exists postgis"
